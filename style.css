@@ -1,3 +1,14 @@
+/* ===== CSS VARIABLES ===== */
+:root {
+    --blush: #f8bbd0;
+    --gold: #d4af37;
+    --cream: #fff8e7;
+    --deep-red: #8b2635;
+    --rose: #e83e6c;
+    --white: #ffffff;
+    --dark: #1a0a2e;
+}
+
 /* ===== DREAMY BACKGROUND ===== */
 .dreamy-bg {
     position: fixed;
