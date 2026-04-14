@@ -1,6 +1,6 @@
-# 💕 Happy Birthday Hanzala - A Special Birthday Wish
+# 💕 A Special Birthday Wish
 
-A beautiful, romantic birthday website dedicated to my love **Hanzala** (Hanzo, Sweetheart, Janoo, Miyan jee) 💕
+A beautiful, romantic birthday website dedicated to Someone Special💕
 
 ## 🎂 What's Inside
 
@@ -30,10 +30,9 @@ This is a heartfelt birthday wish website with:
    - Click "New Project"
    - Import your GitHub repository
    - Click "Deploy"
-   - Share the link with Hanzala! 💕
 
 ## 💝 Made With Love
 
-This website was created with lots of love and care to make Hanzala's birthday extra special.
+This website was created with lots of love and care to make Someone's birthday extra special.
 
-**Happy Birthday Miyan jee! 🎂💕**
+**Happy Birthday! 🎂💕**
