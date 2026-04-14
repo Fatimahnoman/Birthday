@@ -5,7 +5,8 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git push)",
-      "Bash(vercel *)"
+      "Bash(vercel *)",
+      "Bash(rm *)"
     ]
   },
   "$version": 3
