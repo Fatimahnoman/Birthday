@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Hubby 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- DREAMY HEART BACKGROUND -->
+    <div class="dreamy-bg">
+        <!-- Bokeh Lights -->
+        <div class="bokeh-layer">
+            <span class="bokeh" style="--size: 80px; --left: 10%; --top: 20%; --blur: 40px; --color: rgba(212, 175, 55, 0.6);"></span>
+            <span class="bokeh" style="--size: 120px; --left: 70%; --top: 10%; --blur: 60px; --color: rgba(248, 187, 208, 0.5);"></span>
+            <span class="bokeh" style="--size: 60px; --left: 30%; --top: 60%; --blur: 30px; --color: rgba(212, 175, 55, 0.7);"></span>
+            <span class="bokeh" style="--size: 100px; --left: 80%; --top: 70%; --blur: 50px; --color: rgba(248, 187, 208, 0.4);"></span>
+            <span class="bokeh" style="--size: 90px; --left: 50%; --top: 40%; --blur: 45px; --color: rgba(212, 175, 55, 0.5);"></span>
+            <span class="bokeh" style="--size: 70px; --left: 20%; --top: 80%; --blur: 35px; --color: rgba(248, 187, 208, 0.6);"></span>
+            <span class="bokeh" style="--size: 110px; --left: 60%; --top: 30%; --blur: 55px; --color: rgba(212, 175, 55, 0.4);"></span>
+            <span class="bokeh" style="--size: 50px; --left: 85%; --top: 50%; --blur: 25px; --color: rgba(248, 187, 208, 0.7);"></span>
+        </div>
+        
+        <!-- Sparkles -->
+        <div class="sparkles-layer">
+            <span class="sparkle-dot" style="--left: 15%; --top: 25%; --size: 3px;"></span>
+            <span class="sparkle-dot" style="--left: 45%; --top: 15%; --size: 4px;"></span>
+            <span class="sparkle-dot" style="--left: 75%; --top: 45%; --size: 3px;"></span>
+            <span class="sparkle-dot" style="--left: 25%; --top: 65%; --size: 5px;"></span>
+            <span class="sparkle-dot" style="--left: 85%; --top: 80%; --size: 4px;"></span>
+            <span class="sparkle-dot" style="--left: 55%; --top: 75%; --size: 3px;"></span>
+            <span class="sparkle-dot" style="--left: 35%; --top: 35%; --size: 4px;"></span>
+            <span class="sparkle-dot" style="--left: 65%; --top: 55%; --size: 3px;"></span>
+            <span class="sparkle-dot" style="--left: 90%; --top: 20%; --size: 5px;"></span>
+            <span class="sparkle-dot" style="--left: 10%; --top: 90%; --size: 4px;"></span>
+        </div>
+        
+        <!-- Floating Hearts (Upwards) -->
+        <div class="floating-hearts-up">
+            <span class="float-heart pink-glossy" style="--left: 10%; --size: 3rem; --speed: 12s; --delay: 0s;"></span>
+            <span class="float-heart gold-glitter" style="--left: 30%; --size: 4rem; --speed: 15s; --delay: 2s;"></span>
+            <span class="float-heart pink-glossy" style="--left: 50%; --size: 2.5rem; --speed: 10s; --delay: 4s;"></span>
+            <span class="float-heart gold-glitter" style="--left: 70%; --size: 3.5rem; --speed: 14s; --delay: 1s;"></span>
+            <span class="float-heart pink-glossy" style="--left: 85%; --size: 2rem; --speed: 11s; --delay: 3s;"></span>
+            <span class="float-heart gold-glitter" style="--left: 20%; --size: 4.5rem; --speed: 16s; --delay: 5s;"></span>
+            <span class="float-heart pink-glossy" style="--left: 60%; --size: 3rem; --speed: 13s; --delay: 6s;"></span>
+            <span class="float-heart gold-glitter" style="--left: 40%; --size: 2.8rem; --speed: 12s; --delay: 7s;"></span>
+            <span class="float-heart pink-glossy" style="--left: 75%; --size: 3.2rem; --speed: 14s; --delay: 8s;"></span>
+            <span class="float-heart gold-glitter" style="--left: 5%; --size: 2.2rem; --speed: 10s; --delay: 9s;"></span>
+            <span class="float-heart pink-glossy" style="--left: 90%; --size: 3.8rem; --speed: 15s; --delay: 4s;"></span>
+            <span class="float-heart gold-glitter" style="--left: 45%; --size: 2.5rem; --speed: 11s; --delay: 10s;"></span>
+        </div>
+    </div>
+
+    <!-- STAGE 1: BIG ROSE HEART -->
+    <div id="stage1" class="stage">
+        <div class="stage1-content">
+            <p class="stage1-instruction">A Secret Message Awaits... 🔒</p>
+            <div class="locked-letter-container" id="bigHeart">
+                <div class="locked-letter">
+                    <span class="envelope">💌</span>
+                    <span class="lock">🔒</span>
+                </div>
+                <p class="tap-text">Tap to Unlock 💕</p>
+            </div>
+            <p class="stage1-subtext">From Your Begum...</p>
+        </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div id="stage2" class="stage" style="display:none;">
+        <div class="stage2-content">
+            <h1 class="stage2-title">There's Something Special</h1>
+            <h2 class="stage2-name">Inside For You 💕</h2>
+            <div class="stage2-divider">💕</div>
+            <p class="stage2-message">You are my everything, my love, my forever 💕</p>
+            <button class="stage2-btn" id="stage2Btn"><span>💌</span><span>Open Your Gift</span></button>
+        </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div id="stage3" class="stage" style="display:none;">
+        <div class="stage3-content">
+            <div class="gift-box-final" id="giftBoxFinal">
+                <div class="gift-ribbon-top">🎀</div>
+                <div class="gift-body-final">
+                    <span class="gift-label-final">For Hubby</span>
+                    <span class="gift-label-sub">With All My Love</span>
+                </div>
+            </div>
+            <p class="stage3-text">✨ Tap to Unwrap ✨</p>
+        </div>
+    </div>
+
+    <!-- STAGE 4: HEART FORMAT -->
+    <div id="stage4" class="stage" style="display:none;">
+        <div class="heart-layout">
+            <div class="big-heart-header">
+                <div class="heart-outline-icon">❤️</div>
+                <h1 class="main-title">Happy Birthday<br><span class="gold-name">Hanzala</span></h1>
+                <p class="main-subtitle">My Dearest Hubby 💕</p>
+                <div class="heart-divider-line">💕 ✦ </div>
+            </div>
+            <section class="heart-section">
+                <div class="section-heart-icon">💌</div>
+                <h2 class="section-heading">A Love Letter For You</h2>
+                <div class="heart-content-box">
+                    <p class="intro-text">My Dearest <span class="nick">Hanzo</span>,</p>
+                    <p class="body-text">Today is one of the most special days of my life because it's the day Allah blessed this world with YOU — my favorite person, my everything.</p>
+                    <p class="body-text"><span class="nick">Sweetheart</span>, you are not just my love, you are my soulmate, my best friend, and my forever.</p>
+                    <div class="quote-heart"><p>"In you, I've found my home. In your arms, I've found my peace. In your heart, I've found my love."</p></div>
+                    <p class="body-text"><span class="nick">Janoo</span>, my heart beats for you, today and always. Your smile is my sunshine.</p>
+                    <p class="body-text"><span class="nick">Miyan jee</span>, I thank Allah every single day for bringing you into my life. You are my blessing and my everything.</p>
+                    <div class="signature-heart"><p>🎵 You are my today and all of my tomorrows 🎵</p></div>
+                </div>
+            </section>
+            <section class="heart-section">
+                <div class="section-heart-icon">💭</div>
+                <h2 class="section-heading">Our Dreams Together</h2>
+                <div class="dreams-hearts-grid">
+                    <div class="dream-heart-item"><span class="dream-emoji">💑</span><h4>Forever Together</h4><p>Spending every day with you, holding your hand through all of life's adventures.</p></div>
+                    <div class="dream-heart-item"><span class="dream-emoji">💒</span><h4>Our Beautiful Wedding</h4><p>The magical day when we say "I do" and start our forever, InshaAllah.</p></div>
+                    <div class="dream-heart-item"><span class="dream-emoji">👩🏻‍❤️‍👨🏻</span><h4>Our Lovely Family</h4><p>Building a beautiful family filled with laughter and happiness.</p></div>
+                    <div class="dream-heart-item"><span class="dream-emoji">🏡</span><h4>Our Dream Home</h4><p>A home filled with warmth, love, and beautiful memories together.</p></div>
+                </div>
+            </section>
+            <section class="heart-section">
+                <div class="section-heart-icon">🌟</div>
+                <h2 class="section-heading">My Heart's Prayers For You</h2>
+                <div class="wishes-heart-list">
+                    <div class="wish-heart-row"><span class="wish-num">1</span><p>May Allah bless you with endless happiness and success. 🤲</p></div>
+                    <div class="wish-heart-row"><span class="wish-num">2</span><p>May your day be as special as you are to me! 🎉</p></div>
+                    <div class="wish-heart-row"><span class="wish-num">3</span><p>May all your dreams and prayers come true. 💫</p></div>
+                    <div class="wish-heart-row"><span class="wish-num">4</span><p>May our love grow stronger with each passing day. 💕</p></div>
+                    <div class="wish-heart-row special"><span class="wish-num">💝</span><p>My biggest wish: May Allah keep you smiling, healthy, and happy ALWAYS. I love you more than words can express, Hanzo! 💕</p></div>
+                </div>
+            </section>
+            <section class="heart-section">
+                <div class="section-heart-icon">💍</div>
+                <h2 class="section-heading">My Promises To You</h2>
+                <div class="promises-heart-list">
+                    <div class="promise-heart-row"><span class="promise-emoji">💕</span><p>To Love You — Unconditionally, endlessly, forever.</p></div>
+                    <div class="promise-heart-row"><span class="promise-emoji">🤝</span><p>To Stand By You — Through every storm, always.</p></div>
+                    <div class="promise-heart-row"><span class="promise-emoji">😊</span><p>To Make You Smile — Every single day.</p></div>
+                    <div class="promise-heart-row"><span class="promise-emoji">🏠</span><p>To Build A Life — A beautiful life together, InshaAllah.</p></div>
+                </div>
+            </section>
+            <section class="heart-section" id="familySection">
+                <div class="section-heart-icon">👨‍👩‍👧‍👦</div>
+                <h2 class="section-heading">Our Beautiful Future Family</h2>
+                <div class="family-clickable-box" id="familyClickableBox">
+                    <div class="family-box-icon">💑</div>
+                    <h3 class="family-box-title">Tap to Reveal Our Future Family 💕</h3>
+                    <p class="family-box-sub">Click here 💕</p>
+                </div>
+                <div class="family-heart-box" id="familyContentBox" style="display:none;">
+                    <div class="couple-heart-display"><span class="couple-icon">💑</span><h3>Hanzala & Fatimah</h3><p class="couple-text">Together Forever 💕</p></div>
+                    <div class="children-heart-display">
+                        <div class="child-heart-box"><span class="child-emoji">👧</span><h4>Faryal</h4><p>Our Little Princess 💕</p></div>
+                        <div class="child-heart-box"><span class="child-emoji">👦</span><h4>Ali</h4><p>Our Little Prince 💪</p></div>
+                    </div>
+                </div>
+            </section>
+            <section class="heart-section final-heart-section">
+                <div class="section-heart-icon">💝</div>
+                <h2 class="section-heading">A Final Message From Your Begum</h2>
+                <div class="final-heart-content">
+                    <h3 class="final-heart-title">Forever & Always Yours</h3>
+                    <p class="final-heart-text">Happy Birthday once again, my sweetest <span class="nick">Hanzo</span>. You are my today and ALL of my tomorrows.</p>
+                    <p class="final-heart-text"><span class="nick">Sweetheart</span>, I promise to love you, cherish you, and stand by your side through every storm.</p>
+                    <p class="final-heart-text"><span class="nick">Miya jee</span>, no matter how much we argue, we simply can't live without each other — and I admit it. Even if I fight with you, pout, get upset, I can't spend even a single second without talking to you, my life. I love you beyond limits, and I know you love me too — that's why we are absolutely perfect together and always will be. But the most important thing is: no matter what happens, I only have the right on you because you are my life. You are the world's best son, best friend, best brother, and best husband, and I know you will be the bestest father too! Ummmmuuuuwwwwaaaahhhh <3 💋</p>
+                    <p class="final-heart-text"><span class="nick">Janoo</span>, I want to spend the rest of my life making you happy, building our beautiful family together.</p>
+                    <p class="final-heart-text"><span class="nick">Miyan jee</span>, you are my blessing, my gift from Allah. I love you more than anything! 💕</p>
+                    <div class="big-love-heart-msg"><p>I LOVE YOU, Hubby! 💕</p><p>My Everything 💋</p><p>Forever Yours! 💍</p></div>
+                    <p class="final-heart-signature">With all my love,<br><span class="from-heart-text">Your Begum — Forever & Always 💕💍</span></p>
+                    <div class="final-heart-hearts">💕 💗 💝 </div>
+                </div>
+            </section>
+            <!-- Secret Message Unlock -->
+            <section class="heart-section" id="secretMessageSection">
+                <div class="secret-message-box" id="secretMessageBox">
+                    <div class="secret-box-icon">🔒</div>
+                    <h2 class="secret-box-title">A Secret Message Awaits...</h2>
+                    <p class="secret-box-sub">Tap to Unlock 💕</p>
+                </div>
+                <div class="secret-message-content" id="secretMessageContent" style="display:none;">
+                    <div class="secret-message-icon">💌</div>
+                    <h2 class="secret-message-title">I Lovee Youu Infinityy Forever Endever and Ever</h2>
+                    <p class="secret-message-text">💕💗💝💕💗💝💕💗💝</p>
+                </div>
+            </section>
+            <!-- Marry Me - Clickable -->
+            <section class="heart-section" id="marrySection">
+                <div class="marry-clickable-box" id="marryClickableBox">
+                    <div class="marry-box-icon">💍</div>
+                    <h2 class="marry-box-title">A Very Special Question For You</h2>
+                    <p class="marry-box-sub">Tap to reveal 💕</p>
+                </div>
+                
+                <div class="marry-question-content" id="marryQuestionContent" style="display:none;">
+                    <div class="marry-heart-big">❤️</div>
+                    <h3 class="marry-heart-title">Will You Marry Me?</h3>
+                    <p class="marry-heart-sub">My Sweet Hanzo, I want to spend forever with you 💕</p>
+                    <div class="marry-heart-btns">
+                        <button class="btn-yes-heart" id="btnYes">Yes! 💕</button>
+                        <button class="btn-no-heart" id="btnNo">No</button>
+                    </div>
+                </div>
+                
+                <div class="marry-response-content" id="marryResponseContent" style="display:none;">
+                    <div class="ring-heart-big">💍</div>
+                    <h3 class="response-heart-title">Aww Sweetheart, now I'm complete!</h3>
+                    <p class="response-heart-text">You made me the happiest person in the world, my darling Hubby. This is our beautiful forever together! I love you infinitely! 💕💍</p>
+                    <div class="response-hearts-final">💕 💖  💝 💕</div>
+                </div>
+            </section>
+            <footer class="heart-footer">
+                <div class="footer-heart-ornament">❦</div>
+                <p>Made With 💕 For The Love Of My Lifeyyy<3</p>
+                <p class="footer-heart-name">My Forever EndEver & Ever 💕</p>
+                <p class="footer-heart-copy">© Forever & Always Yours, Begum 💍</p>
+                <div class="footer-heart-ornament">❦</div>
+            </footer>
+        </div>
+    </div>
+
+    <video id="bgMusic" loop style="display:none; position: absolute; width: 0; height: 0;">
+        <source src="music.mp3.m4a" type="video/mp4">
+        <source src="music.mp3.m4a" type="audio/mp4">
+    </video>
+    <div class="music-btn-wrap"><button class="music-btn" id="toggleMusic">🎵</button></div>
+    <script src="script.js"></script>
+</body>
+</html>

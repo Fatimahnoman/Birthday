@@ -1,0 +1,1174 @@
+/* ===== DREAMY BACKGROUND ===== */
+.dreamy-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffb6c1 0%, #d8bfd8 25%, #808080 50%, #2c2c2c 75%, #000000 100%);
+}
+
+.dreamy-bg::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.dreamy-bg > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Bokeh Lights */
+.bokeh-layer {
+    position: absolute;
+    width: 100%; height: 100%;
+}
+
+.bokeh {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    left: var(--left);
+    top: var(--top);
+    background: var(--color);
+    border-radius: 50%;
+    filter: blur(var(--blur));
+    animation: bokehFloat 8s ease-in-out infinite;
+}
+
+@keyframes bokehFloat {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+    50% { transform: translateY(-25px) scale(1.15); opacity: 0.8; }
+}
+
+/* Sparkles */
+.sparkles-layer {
+    position: absolute;
+    width: 100%; height: 100%;
+}
+
+.sparkle-dot {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    left: var(--left);
+    top: var(--top);
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--gold), 0 0 25px rgba(212, 175, 55, 0.6);
+    animation: sparkleTwinkle 3s ease-in-out infinite;
+}
+
+@keyframes sparkleTwinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Floating Hearts Upwards */
+.floating-hearts-up {
+    position: absolute;
+    width: 100%; height: 100%;
+}
+
+.float-heart {
+    position: absolute;
+    bottom: -60px;
+    left: var(--left);
+    width: var(--size);
+    height: var(--size);
+    animation: floatUpSlow var(--speed) linear infinite;
+    animation-delay: var(--delay);
+    opacity: 0;
+}
+
+/* Pink Glossy 3D Heart */
+.float-heart.pink-glossy::before {
+    content: '💖';
+    font-size: inherit;
+    filter: drop-shadow(0 0 18px rgba(248, 187, 208, 0.8)) drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+}
+
+/* Gold Glittery Heart */
+.float-heart.gold-glitter::before {
+    content: '✨💗✨';
+    font-size: inherit;
+    letter-spacing: -8px;
+    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 1)) drop-shadow(0 5px 18px rgba(0,0,0,0.4));
+}
+
+@keyframes floatUpSlow {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.9) rotate(0deg);
+        opacity: 0;
+    }
+    8% {
+        opacity: 0.85;
+    }
+    50% {
+        opacity: 0.95;
+    }
+    92% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-130vh) translateX(40px) scale(1.1) rotate(15deg);
+        opacity: 0;
+    }
+}
+
+/* ===== STAGES ===== */
+.stage {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ===== STAGE 1: LOCKED LETTER ===== */
+.stage1-content { text-align: center; position: relative; z-index: 2; }
+.stage1-instruction {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: var(--blush);
+    margin-bottom: 40px;
+    text-shadow: 0 0 35px rgba(248, 187, 208, 0.7);
+    animation: pulseText 3s ease-in-out infinite;
+}
+
+@keyframes pulseText {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; text-shadow: 0 0 50px rgba(248, 187, 208, 1); }
+}
+
+.locked-letter-container {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+    width: 350px;
+    height: 350px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: floatUp 4s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.locked-letter-container:hover { transform: scale(1.08); }
+
+.locked-letter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.envelope {
+    font-size: 14rem;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4)) drop-shadow(0 0 40px rgba(248, 187, 208, 0.6));
+    animation: envelopePulse 2s ease-in-out infinite;
+}
+
+@keyframes envelopePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.lock {
+    position: absolute;
+    bottom: 15px;
+    right: -10px;
+    font-size: 5rem;
+    animation: lockShake 3s ease-in-out infinite;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+}
+
+@keyframes lockShake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+.tap-text {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: blink 2s infinite;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.stage1-subtext {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-top: 25px;
+    text-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+}
+
+/* ===== STAGE 2 ===== */
+.stage2-content { text-align: center; animation: scaleIn 0.8s ease-out; }
+@keyframes scaleIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.stage2-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: var(--blush);
+    margin-bottom: 12px;
+    text-shadow: 0 0 50px rgba(248, 187, 208, 0.7);
+}
+.stage2-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 7.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 60px rgba(212, 175, 55, 0.8);
+    margin-bottom: 25px;
+}
+.stage2-divider { font-size: 2.8rem; margin-bottom: 25px; animation: pulse 2s infinite; }
+.stage2-message { font-size: 1.5rem; color: var(--blush); font-style: italic; margin-bottom: 45px; }
+
+.stage2-btn {
+    display: inline-flex; align-items: center; gap: 15px;
+    padding: 20px 50px;
+    background: linear-gradient(135deg, var(--deep-red), var(--rose));
+    color: var(--white); border: 2px solid var(--gold); border-radius: 50px;
+    font-size: 1.4rem; font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    cursor: pointer; transition: all 0.3s ease;
+    box-shadow: 0 12px 45px rgba(139, 38, 53, 0.6);
+}
+.stage2-btn:hover { transform: translateY(-6px) scale(1.08); box-shadow: 0 18px 55px rgba(139, 38, 53, 0.8); }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+
+/* ===== STAGE 3 ===== */
+.stage3-content { text-align: center; animation: scaleIn 0.8s ease-out; }
+.gift-box-final { cursor: pointer; margin: 0 auto; transition: transform 0.3s ease; }
+.gift-box-final:hover { transform: scale(1.1); }
+.gift-ribbon-top { font-size: 6rem; margin-bottom: -12px; animation: bowDance 2.5s ease-in-out infinite; }
+@keyframes bowDance { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(10deg); } }
+
+.gift-body-final {
+    width: 320px; height: 240px;
+    background: linear-gradient(135deg, var(--deep-red), var(--rose));
+    border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.5); border: 3px solid var(--gold);
+}
+.gift-label-final { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--white); }
+.gift-label-sub { font-size: 1.2rem; color: var(--blush); font-style: italic; }
+.stage3-text {
+    font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--gold);
+    margin-top: 40px; animation: pulse 2s infinite; text-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+}
+
+/* ===== STAGE 4: HEART LAYOUT ===== */
+.heart-layout { max-width: 850px; margin: 0 auto; padding: 50px 25px 90px; animation: fadeIn 1s ease-out; position: relative; z-index: 10; }
+
+.big-heart-header { text-align: center; margin-bottom: 45px; padding: 35px; background: rgba(0,0,0,0.3); border-radius: 28px; border: 2px solid rgba(212, 175, 55, 0.3); }
+.heart-outline-icon { font-size: 6rem; animation: pulse 2s infinite; margin-bottom: 18px; filter: drop-shadow(0 0 25px rgba(232, 62, 108, 0.9)); }
+.main-title { font-family: 'Great Vibes', cursive; font-size: 4.5rem; color: var(--blush); margin-bottom: 12px; text-shadow: 0 0 35px rgba(248, 187, 208, 0.6); }
+.gold-name { color: var(--gold); }
+.main-subtitle { font-size: 1.8rem; color: var(--blush); font-style: italic; }
+.heart-divider-line { font-size: 2rem; color: var(--gold); margin-top: 18px; letter-spacing: 15px; }
+
+/* Heart Sections */
+.heart-section { margin-bottom: 45px; text-align: center; }
+.section-heart-icon { font-size: 4rem; margin-bottom: 15px; }
+.section-heading { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--gold); margin-bottom: 25px; text-shadow: 0 0 25px rgba(212, 175, 55, 0.5); }
+
+.heart-content-box {
+    background: rgba(26, 10, 46, 0.75);
+    border: 2px solid rgba(212, 175, 55, 0.4);
+    border-radius: 25px; padding: 40px; text-align: left;
+    box-shadow: 0 12px 45px rgba(0,0,0,0.35);
+}
+
+.intro-text { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--gold); margin-bottom: 20px; }
+.nick { color: var(--blush); font-weight: 600; font-style: italic; }
+.body-text { font-size: 1.2rem; line-height: 2.2; margin-bottom: 18px; color: var(--cream); }
+
+.quote-heart { background: rgba(212, 175, 55, 0.15); padding: 25px; border-radius: 16px; text-align: center; margin: 28px 0; border-left: 4px solid var(--gold); }
+.quote-heart p { font-family: 'Great Vibes', cursive; font-size: 1.6rem; color: var(--gold); }
+
+.signature-heart { background: rgba(212, 175, 55, 0.2); padding: 18px; border-radius: 14px; text-align: center; margin-top: 25px; }
+.signature-heart p { font-size: 1.4rem; color: var(--blush); }
+
+/* Dreams Grid */
+.dreams-hearts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.dream-heart-item {
+    background: rgba(26, 10, 46, 0.65);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px; padding: 25px; text-align: center; transition: all 0.3s ease;
+}
+.dream-heart-item:hover { transform: translateY(-8px); border-color: var(--blush); box-shadow: 0 12px 35px rgba(0,0,0,0.35); }
+.dream-emoji { font-size: 3.2rem; display: block; margin-bottom: 14px; }
+.dream-heart-item h4 { color: var(--gold); font-size: 1.3rem; margin-bottom: 12px; }
+.dream-heart-item p { font-size: 1.05rem; color: var(--blush); opacity: 0.9; }
+
+/* Wishes */
+.wishes-heart-list { display: flex; flex-direction: column; gap: 16px; }
+
+.wish-heart-row {
+    display: flex; align-items: flex-start; gap: 16px; padding: 16px;
+    background: rgba(26, 10, 46, 0.65); border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 14px; text-align: left;
+}
+.wish-heart-row.special { background: rgba(194, 24, 91, 0.4); border: 2px solid var(--gold); }
+.wish-num { background: var(--gold); color: var(--dark); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+.wish-heart-row p { font-size: 1.1rem; color: var(--cream); line-height: 1.8; }
+
+/* Promises */
+.promises-heart-list { display: flex; flex-direction: column; gap: 16px; }
+.promise-heart-row {
+    display: flex; align-items: center; gap: 16px; padding: 16px;
+    background: rgba(26, 10, 46, 0.65); border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 14px; text-align: left;
+}
+.promise-emoji { font-size: 2.4rem; }
+.promise-heart-row p { font-size: 1.1rem; color: var(--cream); }
+
+/* Family */
+.family-heart-box { background: rgba(26, 10, 46, 0.65); border: 2px solid rgba(212, 175, 55, 0.4); border-radius: 25px; padding: 30px; }
+.couple-heart-display { text-align: center; margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); }
+.couple-icon { font-size: 4rem; display: block; margin-bottom: 14px; }
+.couple-heart-display h3 { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--gold); }
+.couple-text { font-style: italic; color: var(--blush); }
+.children-heart-display { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.child-heart-box { text-align: center; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 20px; }
+.child-emoji { font-size: 4rem; display: block; margin-bottom: 14px; }
+.child-heart-box h4 { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--gold); }
+.child-heart-box > p { color: var(--blush); font-size: 1.05rem; }
+.child-note { font-size: 0.95rem; color: var(--gold); font-style: italic; margin-top: 8px; }
+
+/* Final Message */
+.final-heart-section .heart-content-box { background: linear-gradient(135deg, rgba(92, 26, 27, 0.85), rgba(139, 38, 53, 0.85)); }
+.final-heart-title { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--gold); text-align: center; margin-bottom: 25px; }
+.final-heart-text { font-size: 1.2rem; line-height: 2.2; margin-bottom: 18px; color: var(--cream); }
+.big-love-heart-msg { margin: 30px 0; padding: 30px; background: rgba(212, 175, 55, 0.15); border-radius: 20px; text-align: center; border: 2px solid var(--gold); }
+.big-love-heart-msg p { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--gold); margin: 14px 0; }
+.final-heart-signature { text-align: center; margin-top: 30px; font-size: 1.4rem; color: var(--blush); }
+.from-heart-text { display: block; font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--gold); margin-top: 12px; }
+.final-heart-hearts { text-align: center; font-size: 2.5rem; margin: 25px 0; }
+
+/* Countdown */
+.countdown-heart-display { display: flex; justify-content: center; gap: 20px; margin: 25px 0; }
+.count-heart-circle {
+    background: var(--gold); color: var(--dark); width: 90px; height: 90px;
+    border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+.count-heart-circle span { font-size: 2.2rem; font-weight: 700; }
+.count-heart-circle label { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
+.countdown-heart-note { text-align: center; color: var(--blush); font-style: italic; font-size: 1.15rem; }
+
+/* Secret Message - Clickable Unlock */
+#secretMessageSection .heart-section { margin-bottom: 45px; text-align: center; }
+
+.secret-message-box {
+    background: linear-gradient(135deg, rgba(194, 24, 91, 0.3), rgba(92, 26, 27, 0.6));
+    border: 3px solid var(--gold);
+    border-radius: 25px;
+    padding: 50px 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+}
+
+.secret-message-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+    border-color: var(--blush);
+}
+
+.secret-box-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
+}
+
+.secret-box-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.secret-box-sub {
+    font-size: 1.2rem;
+    color: var(--blush);
+    font-style: italic;
+}
+
+/* Secret Message Content */
+.secret-message-content {
+    background: rgba(194, 24, 91, 0.15);
+    border: 2px solid var(--gold);
+    border-radius: 25px;
+    padding: 40px 30px;
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.secret-message-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+    filter: drop-shadow(0 0 30px rgba(232, 62, 108, 0.8));
+}
+
+.secret-message-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    text-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+}
+
+.secret-message-text {
+    font-size: 1.25rem;
+    color: var(--cream);
+    line-height: 2.1;
+}
+
+/* Marry Me - Clickable */
+.marry-clickable-box {
+    background: linear-gradient(135deg, rgba(194, 24, 91, 0.3), rgba(92, 26, 27, 0.6));
+    border: 3px solid var(--gold);
+    border-radius: 25px;
+    padding: 50px 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+}
+
+.marry-clickable-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+    border-color: var(--blush);
+}
+
+.marry-box-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
+}
+
+.marry-box-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.marry-box-sub {
+    font-size: 1.2rem;
+    color: var(--blush);
+    font-style: italic;
+}
+
+/* Marry Question */
+.marry-question-content {
+    background: rgba(194, 24, 91, 0.15);
+    border: 2px solid var(--gold);
+    border-radius: 25px;
+    padding: 40px 30px;
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.marry-heart-big {
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+    filter: drop-shadow(0 0 35px rgba(232, 62, 108, 0.9));
+}
+
+.marry-heart-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+}
+
+.marry-heart-sub {
+    text-align: center;
+    color: var(--blush);
+    font-style: italic;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+.marry-heart-btns {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.btn-yes-heart, .btn-no-heart {
+    padding: 18px 45px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.btn-yes-heart {
+    background: linear-gradient(135deg, var(--gold), #e8c547);
+    color: var(--dark);
+}
+
+.btn-yes-heart:hover {
+    transform: scale(1.15);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.6);
+}
+
+.btn-no-heart {
+    background: rgba(255,255,255,0.15);
+    color: var(--cream);
+}
+
+/* Marry Response */
+.marry-response-content {
+    background: linear-gradient(135deg, rgba(194, 24, 91, 0.2), rgba(212, 175, 55, 0.15));
+    border: 3px solid var(--gold);
+    border-radius: 25px;
+    padding: 45px 30px;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.ring-heart-big {
+    font-size: 5.5rem;
+    margin-bottom: 20px;
+    animation: spin 4s linear infinite;
+    filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.8));
+}
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.response-heart-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+}
+
+.response-heart-text {
+    font-size: 1.25rem;
+    color: var(--cream);
+    line-height: 2.1;
+    margin-bottom: 25px;
+}
+
+.response-hearts-final {
+    font-size: 2.5rem;
+    letter-spacing: 15px;
+    animation: pulse 2s infinite;
+}
+
+/* Rose Rain Animation */
+.rose-rain {
+    position: fixed;
+    top: -50px;
+    font-size: 2rem;
+    animation: roseRainFall linear forwards;
+    pointer-events: none;
+    z-index: 100000;
+    filter: drop-shadow(0 0 10px rgba(232, 62, 108, 0.6));
+}
+
+@keyframes roseRainFall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0.6; }
+}
+
+/* Footer */
+.heart-footer { text-align: center; padding: 50px 25px; border-top: 2px solid rgba(212, 175, 55, 0.4); margin-top: 50px; background: rgba(0,0,0,0.3); border-radius: 25px; }
+.footer-heart-ornament { color: var(--gold); font-size: 2rem; margin: 14px 0; }
+.heart-footer p { color: var(--blush); margin-bottom: 12px; font-size: 1.15rem; }
+.heart-footer strong { color: var(--gold); }
+.footer-heart-name { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--gold) !important; }
+.footer-heart-copy { font-style: italic; font-size: 1.05rem; }
+
+/* ===== BLAST CELEBRATION ANIMATIONS ===== */
+
+/* Screen Flash */
+.blast-flash {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.9), rgba(212,175,55,0.6));
+    z-index: 999999;
+    pointer-events: none;
+}
+
+/* Firework Particles */
+.firework-flash {
+    position: fixed;
+    width: 100px; height: 100px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255,255,255,1), rgba(255,255,255,0));
+    border-radius: 50%;
+    animation: fireworkFlashBurst 0.6s ease-out forwards;
+    pointer-events: none;
+    z-index: 999998;
+}
+
+@keyframes fireworkFlashBurst {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+}
+
+.firework-particle {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999997;
+    animation: fireworkParticleExplode 2s ease-out forwards;
+    box-shadow: 0 0 8px currentColor, 0 0 15px currentColor;
+}
+
+@keyframes fireworkParticleExplode {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.3);
+        opacity: 0;
+    }
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    top: -20px;
+    pointer-events: none;
+    z-index: 999996;
+    animation: confettiFall linear forwards;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg) scale(0.5);
+        opacity: 0.7;
+    }
+}
+
+/* Rose Explosion */
+.rose-explosion {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999995;
+    animation: roseExplode 3s ease-out forwards;
+    filter: drop-shadow(0 0 10px rgba(232, 62, 108, 0.8));
+}
+
+@keyframes roseExplode {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Golden Sparkles */
+.golden-sparkle {
+    position: fixed;
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999994;
+    animation: goldenSparkleTwinkle 2s ease-in-out infinite;
+    box-shadow: 0 0 15px var(--gold), 0 0 30px rgba(212,175,55,0.6), 0 0 45px rgba(212,175,55,0.3);
+}
+
+@keyframes goldenSparkleTwinkle {
+    0%, 100% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
+
+/* Heart Burst */
+.heart-burst {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999993;
+    animation: heartBurstExplode 2s ease-out forwards;
+    filter: drop-shadow(0 0 12px rgba(232, 62, 108, 0.9));
+}
+
+@keyframes heartBurstExplode {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(2);
+        opacity: 0;
+    }
+}
+
+/* Birthday Special Message */
+.birthday-special-message {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, rgba(194, 24, 91, 0.95), rgba(92, 26, 27, 0.95));
+    border: 4px solid var(--gold);
+    border-radius: 30px;
+    padding: 60px 40px;
+    text-align: center;
+    z-index: 1000000;
+    animation: messageAppear 0.8s ease-out;
+    box-shadow: 0 0 100px rgba(212,175,55,0.8), 0 30px 80px rgba(0,0,0,0.6);
+    max-width: 90%;
+}
+
+@keyframes messageAppear {
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(-10deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.birthday-special-message .msg-icon {
+    font-size: 8rem;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+    filter: drop-shadow(0 0 30px rgba(232, 62, 108, 0.9));
+}
+
+.birthday-special-message .msg-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+    text-shadow: 0 0 40px rgba(212,175,55,0.8);
+}
+
+.birthday-special-message .msg-subtitle {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: var(--blush);
+    margin-bottom: 20px;
+}
+
+.birthday-special-message .msg-text {
+    font-size: 1.5rem;
+    color: var(--cream);
+    margin-bottom: 25px;
+}
+
+.birthday-special-message .msg-hearts {
+    font-size: 3rem;
+    letter-spacing: 15px;
+    animation: pulse 2s infinite;
+}
+
+/* Final Wave Items */
+.final-wave-item {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999992;
+    animation: finalWaveFall linear forwards;
+    filter: drop-shadow(0 0 8px rgba(212,175,55,0.5));
+}
+
+@keyframes finalWaveFall {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg) scale(1);
+        opacity: 0.6;
+    }
+}
+
+/* Final Center Explosion */
+.final-center-explosion {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999991;
+    animation: finalCenterExplode 3s ease-out forwards;
+    filter: drop-shadow(0 0 10px rgba(212,175,55,0.8));
+}
+
+@keyframes finalCenterExplode {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(2);
+        opacity: 0;
+    }
+}
+
+/* Music Button */
+.music-btn-wrap { position: fixed; bottom: 30px; right: 30px; z-index: 10001; }
+.music-btn {
+    width: 65px; height: 65px; border-radius: 50%; background: var(--gold);
+    border: 2px solid var(--white); font-size: 1.8rem; cursor: pointer;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4); transition: all 0.3s ease;
+}
+.music-btn:hover { transform: scale(1.18); }
+
+/* Family Clickable Box */
+.family-clickable-box {
+    background: linear-gradient(135deg, rgba(194, 24, 91, 0.3), rgba(92, 26, 27, 0.6));
+    border: 3px solid var(--gold);
+    border-radius: 25px;
+    padding: 50px 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    margin-top: 20px;
+}
+
+.family-clickable-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+    border-color: var(--blush);
+}
+
+.family-box-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
+}
+
+.family-box-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.family-box-sub {
+    font-size: 1.2rem;
+    color: var(--blush);
+    font-style: italic;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .heart-layout { 
+        max-width: 100%; 
+        padding: 30px 20px 70px; 
+    }
+    
+    .stage2-title { font-size: 3rem; }
+    .stage2-name { font-size: 4.5rem; }
+    .stage2-message { font-size: 1.2rem; }
+    .stage2-btn { padding: 18px 40px; font-size: 1.2rem; }
+    
+    .main-title { font-size: 3rem; }
+    .section-heading { font-size: 2rem; }
+    .section-heart-icon { font-size: 3rem; }
+    
+    .big-heart-header { padding: 25px 20px; }
+    .heart-outline-icon { font-size: 4.5rem; }
+    .main-subtitle { font-size: 1.4rem; }
+    
+    .heart-content-box { padding: 25px 20px; }
+    .intro-text { font-size: 1.8rem; }
+    .body-text { font-size: 1.05rem; line-height: 1.9; }
+    .quote-heart p { font-size: 1.3rem; }
+    
+    .dreams-hearts-grid { grid-template-columns: 1fr; }
+    .children-heart-display { grid-template-columns: 1fr; }
+    
+    .wish-heart-row { flex-direction: column; gap: 10px; }
+    .wish-heart-row p { font-size: 1rem; }
+    .promise-heart-row p { font-size: 1rem; }
+    
+    .count-heart-circle { width: 75px; height: 75px; }
+    .count-heart-circle span { font-size: 1.8rem; }
+    .countdown-heart-display { gap: 14px; }
+    
+    .secret-message-box { padding: 35px 20px; }
+    .secret-message-content { padding: 30px 20px; }
+    .secret-box-icon { font-size: 4rem; }
+    .secret-message-icon { font-size: 4rem; }
+    .secret-message-title { font-size: 2.2rem; }
+    .secret-message-text { font-size: 1.1rem; }
+    
+    .marry-clickable-box { padding: 35px 20px; }
+    .marry-box-icon { font-size: 4rem; }
+    .marry-box-title { font-size: 2rem; }
+    .marry-heart-big { font-size: 4.5rem; }
+    .marry-heart-title { font-size: 2.5rem; }
+    .btn-yes-heart, .btn-no-heart { padding: 15px 35px; font-size: 1.1rem; }
+    
+    .final-heart-title { font-size: 2.2rem; }
+    .final-heart-text { font-size: 1.05rem; }
+    .big-love-heart-msg p { font-size: 1.8rem; }
+    .from-heart-text { font-size: 1.8rem; }
+    
+    .ring-heart-big { font-size: 4rem; }
+    .response-heart-title { font-size: 2.2rem; }
+    .response-heart-text { font-size: 1.1rem; }
+    
+    .couple-icon { font-size: 3.5rem; }
+    .couple-heart-display h3 { font-size: 2rem; }
+    .child-emoji { font-size: 3.5rem; }
+    .child-heart-box h4 { font-size: 2rem; }
+    
+    .family-clickable-box { padding: 35px 20px; }
+    .family-box-icon { font-size: 4rem; }
+    .family-box-title { font-size: 1.8rem; }
+    
+    .heart-footer { padding: 30px 20px; }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .heart-layout { 
+        padding: 20px 15px 50px; 
+    }
+    
+    .big-heart-header { 
+        padding: 20px 15px; 
+        border-radius: 20px; 
+    }
+    .heart-outline-icon { font-size: 3.5rem; }
+    .main-title { font-size: 2.2rem; }
+    .gold-name { font-size: 2rem; }
+    .main-subtitle { font-size: 1.2rem; }
+    .heart-divider-line { font-size: 1.5rem; letter-spacing: 10px; }
+    
+    .section-heading { font-size: 1.7rem; margin-bottom: 18px; }
+    .section-heart-icon { font-size: 2.5rem; margin-bottom: 10px; }
+    
+    .heart-content-box { 
+        padding: 20px 15px; 
+        border-radius: 18px; 
+    }
+    .intro-text { font-size: 1.5rem; }
+    .body-text { font-size: 0.95rem; line-height: 1.8; margin-bottom: 14px; }
+    .quote-heart { padding: 18px; border-radius: 12px; }
+    .quote-heart p { font-size: 1.1rem; }
+    .signature-heart { padding: 14px; }
+    .signature-heart p { font-size: 1.1rem; }
+    
+    .dream-heart-item { padding: 18px; }
+    .dream-emoji { font-size: 2.5rem; }
+    .dream-heart-item h4 { font-size: 1.1rem; }
+    .dream-heart-item p { font-size: 0.9rem; }
+    
+    .wish-heart-row { padding: 12px; gap: 8px; }
+    .wish-num { width: 32px; height: 32px; font-size: 0.9rem; }
+    .wish-heart-row p { font-size: 0.9rem; line-height: 1.6; }
+    .promise-heart-row { padding: 12px; }
+    .promise-emoji { font-size: 1.8rem; }
+    .promise-heart-row p { font-size: 0.9rem; }
+    
+    .countdown-heart-display { gap: 10px; flex-wrap: wrap; }
+    .count-heart-circle { width: 65px; height: 65px; }
+    .count-heart-circle span { font-size: 1.5rem; }
+    .count-heart-circle label { font-size: 0.7rem; }
+    .countdown-heart-note { font-size: 0.95rem; }
+    
+    .secret-message-box { padding: 25px 15px; border-radius: 18px; }
+    .secret-box-icon { font-size: 3.5rem; }
+    .secret-box-title { font-size: 1.8rem; }
+    .secret-box-sub { font-size: 1rem; }
+    .secret-message-content { padding: 25px 15px; }
+    .secret-message-icon { font-size: 3.5rem; }
+    .secret-message-title { font-size: 1.8rem; }
+    .secret-message-text { font-size: 0.95rem; }
+    
+    .marry-clickable-box { padding: 25px 15px; }
+    .marry-box-icon { font-size: 3.5rem; }
+    .marry-box-title { font-size: 1.6rem; }
+    .marry-box-sub { font-size: 1rem; }
+    .marry-heart-big { font-size: 3.5rem; }
+    .marry-heart-title { font-size: 2rem; }
+    .marry-heart-sub { font-size: 1rem; }
+    .marry-heart-btns { flex-direction: column; gap: 15px; }
+    .btn-yes-heart, .btn-no-heart { 
+        padding: 14px 30px; 
+        font-size: 1.1rem; 
+        width: 100%; 
+    }
+    .ring-heart-big { font-size: 3.5rem; }
+    .response-heart-title { font-size: 1.8rem; }
+    .response-heart-text { font-size: 1rem; line-height: 1.8; }
+    .response-hearts-final { font-size: 2rem; letter-spacing: 10px; }
+    
+    .family-heart-box { padding: 20px 15px; border-radius: 18px; }
+    .family-clickable-box { padding: 25px 15px; border-radius: 18px; }
+    .family-box-icon { font-size: 3.5rem; }
+    .family-box-title { font-size: 1.5rem; }
+    .family-box-sub { font-size: 1rem; }
+    
+    .couple-icon { font-size: 3rem; }
+    .couple-heart-display h3 { font-size: 1.7rem; }
+    .couple-text { font-size: 0.95rem; }
+    .child-emoji { font-size: 3rem; }
+    .child-heart-box { padding: 18px; }
+    .child-heart-box h4 { font-size: 1.7rem; }
+    .child-heart-box > p { font-size: 0.9rem; }
+    .child-note { font-size: 0.85rem; }
+    
+    .final-heart-section .heart-content-box { 
+        padding: 20px 15px; 
+    }
+    .final-heart-title { font-size: 1.8rem; }
+    .final-heart-text { font-size: 0.95rem; line-height: 1.9; margin-bottom: 14px; }
+    .big-love-heart-msg { padding: 20px; border-radius: 15px; margin: 20px 0; }
+    .big-love-heart-msg p { font-size: 1.5rem; margin: 10px 0; }
+    .final-heart-signature { font-size: 1.1rem; margin-top: 20px; }
+    .from-heart-text { font-size: 1.5rem; }
+    .final-heart-hearts { font-size: 2rem; }
+    
+    .heart-footer { 
+        padding: 25px 15px; 
+        border-radius: 18px; 
+    }
+    .footer-heart-ornament { font-size: 1.5rem; margin: 10px 0; }
+    .heart-footer p { font-size: 0.95rem; margin-bottom: 8px; }
+    .footer-heart-name { font-size: 2rem !important; }
+    .footer-heart-copy { font-size: 0.9rem; }
+    
+    /* Stage 1 */
+    .stage1-instruction { font-size: 2rem; margin-bottom: 30px; }
+    .locked-letter-container { width: 280px; height: 280px; }
+    .envelope { font-size: 10rem; }
+    .lock { font-size: 3.5rem; }
+    .tap-text { font-size: 1.2rem; }
+    .stage1-subtext { font-size: 1.5rem; }
+    
+    /* Stage 2 */
+    .stage2-title { font-size: 2.5rem; }
+    .stage2-name { font-size: 3.5rem; }
+    .stage2-divider { font-size: 2rem; }
+    .stage2-message { font-size: 1.1rem; margin-bottom: 30px; }
+    .stage2-btn { 
+        padding: 15px 35px; 
+        font-size: 1.1rem; 
+        width: 90%; 
+        justify-content: center; 
+    }
+    
+    /* Stage 3 */
+    .gift-body-final { 
+        width: 250px; 
+        height: 200px; 
+    }
+    .gift-ribbon-top { font-size: 4.5rem; }
+    .gift-label-final { font-size: 2.2rem; }
+    .gift-label-sub { font-size: 1rem; }
+    .stage3-text { font-size: 1.5rem; margin-top: 30px; }
+    
+    /* Music button */
+    .music-btn-wrap { bottom: 20px; right: 20px; }
+    .music-btn { width: 55px; height: 55px; font-size: 1.5rem; }
+    
+    .birthday-special-message {
+        padding: 40px 25px;
+        border-radius: 20px;
+    }
+    .birthday-special-message .msg-icon { font-size: 5rem; }
+    .birthday-special-message .msg-title { font-size: 3rem; }
+    .birthday-special-message .msg-subtitle { font-size: 2rem; }
+    .birthday-special-message .msg-text { font-size: 1.1rem; }
+    .birthday-special-message .msg-hearts { font-size: 2rem; }
+}
+
+/* Small phones (360px and below) */
+@media (max-width: 360px) {
+    .heart-layout { padding: 15px 12px 40px; }
+    
+    .main-title { font-size: 1.8rem; }
+    .section-heading { font-size: 1.5rem; }
+    
+    .heart-content-box { padding: 15px 12px; }
+    .body-text { font-size: 0.9rem; }
+    
+    .countdown-heart-display { gap: 8px; }
+    .count-heart-circle { width: 58px; height: 58px; }
+    .count-heart-circle span { font-size: 1.3rem; }
+    .count-heart-circle label { font-size: 0.65rem; }
+    
+    .stage2-title { font-size: 2rem; }
+    .stage2-name { font-size: 2.8rem; }
+    
+    .music-btn { width: 48px; height: 48px; font-size: 1.3rem; }
+}

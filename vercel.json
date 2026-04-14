@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "happy-birthday-hanzala",
+  "builds": [],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
