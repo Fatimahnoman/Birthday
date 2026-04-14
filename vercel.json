@@ -3,18 +3,14 @@
   "name": "happy-birthday-hanzala",
   "builds": [
     {
-      "src": "**/*",
+      "src": "index.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.+\\.(css|js|mp4|m4a|png|jpg|svg|ico))",
-      "dest": "/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/$1"
     }
   ]
 }
