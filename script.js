@@ -490,3 +490,51 @@ function checkBirthdayDate() {
 }
 
 checkBirthdayDate();
+
+// KISSES BUTTON - Cute message + kisses blast
+const kissesBtn = document.getElementById('kissesBtn');
+
+if (kissesBtn) {
+    kissesBtn.addEventListener('click', () => {
+        // Hide button
+        kissesBtn.style.display = 'none';
+
+        // Show cute message
+        const msg = document.createElement('div');
+        msg.className = 'kisses-message-box';
+        msg.innerHTML = `
+            <div class="kisses-icon">💋</div>
+            <h2 class="kisses-title">Sending You Infinite Kisses!</h2>
+            <p class="kisses-text">Every kiss is filled with my love for you 💕</p>
+            <p class="kisses-signature">Forever Yours, Begum 💍</p>
+            <div class="kisses-hearts">💋💋💋💋💋</div>
+        `;
+        document.querySelector('.heart-layout').appendChild(msg);
+
+        // Trigger kisses blast
+        createKissesBlast();
+        setTimeout(() => createKissesBlast(), 1500);
+        setTimeout(() => createKissesBlast(), 3000);
+    });
+}
+
+// KISSES BLAST ANIMATION
+function createKissesBlast() {
+    const kisses = ['💋', '💋', '💋', '💗', '💕', '❤️', '😘'];
+    const numKisses = 80;
+
+    for (let i = 0; i < numKisses; i++) {
+        setTimeout(() => {
+            const kiss = document.createElement('div');
+            kiss.className = 'kiss-particle';
+            kiss.textContent = kisses[Math.floor(Math.random() * kisses.length)];
+            kiss.style.left = Math.random() * 100 + 'vw';
+            kiss.style.top = Math.random() * 100 + 'vh';
+            kiss.style.fontSize = (1.5 + Math.random() * 3) + 'rem';
+            kiss.style.animationDuration = (2 + Math.random() * 3) + 's';
+
+            document.body.appendChild(kiss);
+            setTimeout(() => kiss.remove(), 5000);
+        }, i * 40);
+    }
+}
